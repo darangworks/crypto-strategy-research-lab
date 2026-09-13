@@ -7,11 +7,10 @@ __pycache__/
 .venv/
 venv/
 
-data/*.csv
-data/*.parquet
-data/*.zip
+# Data CSVs anywhere in the repo
+**/*.csv
 !data/README.md
-!data/*/MANIFEST.md
+!data/**/MANIFEST.md
 
 results/**/*.png
 results/**/*.pdf
