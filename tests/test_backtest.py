@@ -191,3 +191,18 @@ def test_returns_are_bar_to_bar_equity_pct_change():
 
     assert (result.returns == 0.0).all()
     assert len(result.returns) == len(df)
+
+def test_invalid_target_raises():
+    """Engine must not silently coerce invalid target values."""
+    df = make_df([100.0] * 5)
+    strategy = FixedTargetStrategy([0.0, 0.5, 0.5, 0.5, 0.0])
+    with pytest.raises(ValueError, match="target_position must contain"):
+        run_backtest(df, strategy)
+
+
+def test_short_target_raises():
+    """Short positions not supported in Experiment 001."""
+    df = make_df([100.0] * 5)
+    strategy = FixedTargetStrategy([0.0, -1.0, -1.0, -1.0, 0.0])
+    with pytest.raises(ValueError, match="target_position must contain"):
+        run_backtest(df, strategy)
