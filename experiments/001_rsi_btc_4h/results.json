@@ -1,0 +1,46 @@
+{
+  "experiment_id": "001_rsi_btc_4h",
+  "status": "BASELINE",
+  "generated_at_utc": "2026-09-13T14:59:45.975722+00:00",
+  "schema_version": "1.0",
+  "provenance": {
+    "git_commit": "8bc2182892b8a0450e38365c435cbef503a81f2a",
+    "git_dirty": false,
+    "python_version": "3.13.3",
+    "pandas_version": "2.3.3"
+  },
+  "data": {
+    "source": "yfinance",
+    "symbol": "BTC-USD",
+    "timeframe": "4h",
+    "file": "data\\001_btc_4h\\BTC-USD_4h.csv",
+    "rows": 4334,
+    "start": "2024-09-14 00:00:00+00:00",
+    "end": "2026-09-13 12:00:00+00:00",
+    "sha256_actual": "0aaaa726e79c238b74688d58982816a4d263bb2339d9793049bd0764e1cc1296",
+    "sha256_expected": "0aaaa726e79c238b74688d58982816a4d263bb2339d9793049bd0764e1cc1296",
+    "sha256_match": true
+  },
+  "strategy": {
+    "name": "RSIMeanReversion",
+    "rsi_period": 14,
+    "entry_threshold": 30.0,
+    "exit_threshold": 50.0,
+    "rsi_style": "Wilder",
+    "cross_semantics": "strict"
+  },
+  "backtest": {
+    "initial_capital": 100000.0,
+    "position_pct": 0.1,
+    "commission": 0.0005,
+    "slippage": 0.0002
+  },
+  "metrics": {
+    "net_pnl": 1393.7348645312595,
+    "sharpe": 0.3134461812744099,
+    "profit_factor": 1.2806280210437246,
+    "win_rate": 0.7419354838709677,
+    "max_drawdown": -0.02875673287083369,
+    "trade_count": 31
+  }
+}
