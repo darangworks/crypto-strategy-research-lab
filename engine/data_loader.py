@@ -17,31 +17,38 @@ REQUIRED_COLUMNS = ["Open", "High", "Low", "Close", "Volume"]
 
 @dataclass
 class DataManifest:
+    data_status: str
     source: str
     symbol: str
     timeframe: str
+    requested_period: str
     start: str
     end: str
     retrieved_at: str
     row_count: int
     columns: list
+    filename: str
     sha256: str
 
     def to_markdown(self) -> str:
         lines = [
             "# Data Manifest",
             "",
-            f"- **Source:** {self.source}",
-            f"- **Symbol:** {self.symbol}",
-            f"- **Timeframe:** {self.timeframe}",
-            f"- **Start:** {self.start}",
-            f"- **End:** {self.end}",
-            f"- **Retrieved at:** {self.retrieved_at}",
-            f"- **Row count:** {self.row_count}",
-            f"- **Columns:** {', '.join(self.columns)}",
-            f"- **SHA-256:** `{self.sha256}`",
+            f"- **data_status:** {self.data_status}",
+            f"- **source:** {self.source}",
+            f"- **symbol:** {self.symbol}",
+            f"- **timeframe:** {self.timeframe}",
+            f"- **requested_period:** {self.requested_period}",
+            f"- **start:** {self.start}",
+            f"- **end:** {self.end}",
+            f"- **retrieved_at:** {self.retrieved_at}",
+            f"- **row_count:** {self.row_count}",
+            f"- **columns:** {', '.join(self.columns)}",
+            f"- **filename:** {self.filename}",
+            f"- **sha256:** `{self.sha256}`",
             "",
-            "> Reproducibility relies on this frozen CSV.",
+            "> This is a FROZEN canonical research snapshot.",
+            "> Reproducibility relies on this CSV, not on re-downloading.",
         ]
         return "\n".join(lines)
 
@@ -92,18 +99,22 @@ def freeze_snapshot(symbol, timeframe, out_dir, *, source="yfinance", period="73
 
     _integrity_guards(df)
 
-    csv_path = out_path / f"{symbol}_{timeframe}.csv"
+    filename = f"{symbol}_{timeframe}.csv"
+    csv_path = out_path / filename
     df.to_csv(csv_path, date_format="%Y-%m-%d %H:%M:%S%z")
 
     manifest = DataManifest(
+        data_status="FROZEN",
         source=source,
         symbol=symbol,
         timeframe=timeframe,
+        requested_period=period,
         start=str(df.index[0]),
         end=str(df.index[-1]),
         retrieved_at=datetime.now(timezone.utc).isoformat(),
         row_count=len(df),
         columns=list(df.columns),
+        filename=filename,
         sha256=_sha256_file(csv_path),
     )
 
@@ -125,6 +136,11 @@ def load_frozen(csv_path):
 
 
 def verify_manifest(manifest_path, csv_path) -> bool:
+    """
+    Verify that a CSV matches the sha256 recorded in its manifest.
+
+    Looks for the 'sha256' line in the manifest (case-insensitive).
+    """
     manifest_path = Path(manifest_path)
     csv_path = Path(csv_path)
 
@@ -133,8 +149,11 @@ def verify_manifest(manifest_path, csv_path) -> bool:
 
     text = manifest_path.read_text(encoding="utf-8")
     for line in text.splitlines():
-        if "SHA-256" in line:
-            expected = line.split("`")[1].strip()
-            actual = _sha256_file(csv_path)
-            return expected == actual
+        if "sha256" in line.lower():
+            # Line format: "- **sha256:** `abcdef...`"
+            parts = line.split("`")
+            if len(parts) >= 2:
+                expected = parts[1].strip()
+                actual = _sha256_file(csv_path)
+                return expected == actual
     return False
