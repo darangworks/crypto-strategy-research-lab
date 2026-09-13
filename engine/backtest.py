@@ -103,13 +103,17 @@ def run_backtest(df, strategy, config: Optional[BacktestConfig] = None) -> Backt
 
     target = target.fillna(0.0)
 
-    if (target < 0).any():
-        raise ValueError(
-            "Short positions are not supported in Experiment 001. "
-            "target_position must be 0 or +1."
-        )
+        
 
-    target = (target > 0).astype(float)
+    # Strict validation: only 0.0 (flat) or 1.0 (long) allowed.
+    # The engine does NOT silently coerce invalid values.
+    unique_vals = set(target.unique())
+    allowed_vals = {0.0, 1.0}
+    if not unique_vals.issubset(allowed_vals):
+        raise ValueError(
+            f"target_position must contain only 0.0 (flat) or 1.0 (long). "
+            f"Got: {sorted(unique_vals)}"
+        )
 
     open_ = df["Open"].values
     close = df["Close"].values
