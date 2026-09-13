@@ -1,0 +1,46 @@
+name: template
+version: "0.1"
+
+experiment:
+  type: confirmatory
+
+hypothesis: >
+  Describe the economic rationale.
+
+parameters:
+  param_1: 14
+  param_2: 30
+
+data:
+  source: "Binance"
+  symbols: ["BTCUSDT"]
+  timeframe: "4h"
+  period: "730d"
+
+execution:
+  commission: 0.0005
+  slippage: 0.0002
+  position_pct: 0.10
+  fill: "next_open"
+
+validation:
+  walk_forward:
+    enabled: true
+    n_windows: 6
+  bootstrap:
+    enabled: true
+    method: stationary_block
+    iterations: 2000
+    block_length: auto
+    seed: 42
+  parameter_stability:
+    enabled: true
+    perturbation: 0.10
+  multiple_testing:
+    enabled: true
+    method: "benjamini_hochberg"
+  regime_analysis:
+    enabled: true
+  cross_asset:
+    enabled: false
+    symbols: ["ETHUSDT", "SOLUSDT"]
