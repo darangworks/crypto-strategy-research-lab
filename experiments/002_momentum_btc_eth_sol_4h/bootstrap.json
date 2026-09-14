@@ -1,0 +1,87 @@
+{
+  "experiment_id": "002_momentum_btc_eth_sol_4h",
+  "step": "bootstrap",
+  "status": "BOOTSTRAP_COMPLETE",
+  "generated_at_utc": "2026-09-14T21:55:01.897205+00:00",
+  "schema_version": "1.0",
+  "provenance": {
+    "git_commit": "394c35962435a43b7e36c029208d109f4c9167e1",
+    "git_dirty": false,
+    "python_version": "3.13.3",
+    "pandas_version": "2.3.3",
+    "numpy_version": "2.2.1",
+    "data_hashes": {
+      "BTC-USD": "0aaaa726e79c238b74688d58982816a4d263bb2339d9793049bd0764e1cc1296",
+      "ETH-USD": "6c52a771499fcc23603ee4dedebafdd04072609b3654d7b03c220648f8d7ed3e",
+      "SOL-USD": "3781a99f3cd4d191f5bdbceb16ab9dbbd0440f97260293c4754fcbfb284eca1b"
+    }
+  },
+  "spec": {
+    "method": "stationary_block_bootstrap",
+    "n_iter": 2000,
+    "ci_level": 0.95,
+    "seed": 20260913,
+    "acf_max_lag": 200,
+    "acf_threshold_factor": 2.0,
+    "split_index": 2167,
+    "warmup_bars": 6,
+    "lookback": 6,
+    "tiebreak_order": [
+      "BTC-USD",
+      "ETH-USD",
+      "SOL-USD"
+    ]
+  },
+  "block_length_estimation": {
+    "returns": {
+      "block_length": 1,
+      "first_below": 1,
+      "threshold": 0.042973504259354006
+    },
+    "spread": {
+      "block_length": 1,
+      "first_below": 1,
+      "threshold": 0.042973504259354006
+    }
+  },
+  "strategy": {
+    "observed_mean_return": -0.0006318296023114182,
+    "observed_sharpe": -2.3441510348820622,
+    "observed_net_pnl": -78548.32194075876,
+    "bootstrap_mean_return": {
+      "mean": -0.0006331453639688895,
+      "std": 0.00027272289872356116,
+      "ci_2_5": -0.001150589528569666,
+      "ci_97_5": -0.00010679828623892357,
+      "p_value_opposite_sign": 0.011,
+      "percentile_of_zero": 0.989
+    },
+    "bootstrap_sharpe": {
+      "mean": -2.343049800414743,
+      "std": 0.996379518726393,
+      "ci_2_5": -4.212274472067045,
+      "ci_97_5": -0.40806547559144934,
+      "p_value_opposite_sign": 0.011,
+      "percentile_of_zero": 0.989
+    },
+    "verdict": "FAIL"
+  },
+  "predictive": {
+    "observed_mean_spread": -0.00011844725283775896,
+    "bootstrap_mean_spread": {
+      "mean": -0.00011663852073573172,
+      "std": 0.00016362820928637415,
+      "ci_2_5": -0.00042416354466092034,
+      "ci_97_5": 0.0002020244885950145,
+      "p_value_opposite_sign": 0.2405,
+      "percentile_of_zero": 0.7595
+    },
+    "verdict": "INCONCLUSIVE"
+  },
+  "decision": {
+    "predictive_verdict": "INCONCLUSIVE",
+    "strategy_verdict": "FAIL",
+    "overall": "INCONCLUSIVE",
+    "note": "Bootstrap is additional validation, not a rescue for WFO FAIL."
+  }
+}
