@@ -1,0 +1,58 @@
+{
+  "experiment_id": "001_rsi_btc_4h",
+  "step": "walk-forward",
+  "status": "WFO_COMPLETE",
+  "generated_at_utc": "2026-09-14T05:41:35.678060+00:00",
+  "schema_version": "1.0",
+  "provenance": {
+    "git_commit": "075b8b16cc0675925a4bd56a6483bc49cd08c392",
+    "python_version": "3.13.3",
+    "pandas_version": "2.3.3",
+    "data_sha256": "0aaaa726e79c238b74688d58982816a4d263bb2339d9793049bd0764e1cc1296"
+  },
+  "split": {
+    "split_index": 2167,
+    "is_start": "2024-09-14 00:00:00+00:00",
+    "is_end": "2025-09-10 00:00:00+00:00",
+    "oos_start": "2025-09-10 04:00:00+00:00",
+    "oos_end": "2026-09-13 12:00:00+00:00",
+    "is_rows": 2167,
+    "oos_rows": 2167,
+    "warmup_rows": 14,
+    "force_flat_at_split": true
+  },
+  "strategy": {
+    "name": "RSIMeanReversion",
+    "rsi_period": 14,
+    "entry_threshold": 30.0,
+    "exit_threshold": 50.0
+  },
+  "config": {
+    "initial_capital": 100000.0,
+    "position_pct": 0.1,
+    "commission": 0.0005,
+    "slippage": 0.0002
+  },
+  "is_metrics": {
+    "net_pnl": 3328.67574136598,
+    "sharpe": 1.5582800882072538,
+    "profit_factor": 6.519696436109608,
+    "win_rate": 0.9333333333333333,
+    "max_drawdown": -0.014357383924474276,
+    "trade_count": 15
+  },
+  "oos_metrics": {
+    "net_pnl": -1872.6078341291286,
+    "sharpe": -0.7571905490288287,
+    "profit_factor": 0.5565551687490236,
+    "win_rate": 0.5625,
+    "max_drawdown": -0.02875673287083369,
+    "trade_count": 16
+  },
+  "decision": {
+    "criterion": "oos_sharpe sign per pre-registration",
+    "oos_sharpe": -0.7571905490288287,
+    "verdict": "FAIL",
+    "note": "WFO FAIL: OOS Sharpe < 0. Bootstrap remains a separate pre-registered uncertainty analysis."
+  }
+}
