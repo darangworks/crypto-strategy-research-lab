@@ -1,0 +1,55 @@
+{
+  "experiment_id": "002_momentum_btc_eth_sol_4h",
+  "status": "BASELINE",
+  "generated_at_utc": "2026-09-14T14:51:05.834840+00:00",
+  "schema_version": "1.0",
+  "provenance": {
+    "git_commit": "08addfaeadbaa92c588067894059df1f54b7764a",
+    "git_dirty": false,
+    "python_version": "3.13.3",
+    "pandas_version": "2.3.3",
+    "numpy_version": "2.2.1",
+    "data_hashes": {
+      "BTC-USD": "0aaaa726e79c238b74688d58982816a4d263bb2339d9793049bd0764e1cc1296",
+      "ETH-USD": "6c52a771499fcc23603ee4dedebafdd04072609b3654d7b03c220648f8d7ed3e",
+      "SOL-USD": "3781a99f3cd4d191f5bdbceb16ab9dbbd0440f97260293c4754fcbfb284eca1b"
+    }
+  },
+  "data": {
+    "dir": "data\\002_btc_eth_sol_4h",
+    "assets": [
+      "BTC-USD",
+      "ETH-USD",
+      "SOL-USD"
+    ],
+    "rows": 4334,
+    "start": "2024-09-14 00:00:00+00:00",
+    "end": "2026-09-13 12:00:00+00:00",
+    "common_grid": true
+  },
+  "strategy": {
+    "name": "CrossSectionalMomentum",
+    "lookback": 6,
+    "tiebreak_order": [
+      "BTC-USD",
+      "ETH-USD",
+      "SOL-USD"
+    ],
+    "top_n": 1,
+    "long_only": true
+  },
+  "backtest": {
+    "initial_capital": 100000.0,
+    "position_pct": 1.0,
+    "commission": 0.0005,
+    "slippage": 0.0002
+  },
+  "metrics": {
+    "net_pnl": -78027.73105536183,
+    "sharpe": -0.859057469250383,
+    "profit_factor": 0.8910147372810079,
+    "win_rate": 0.41242450388265744,
+    "max_drawdown": -0.908338761389481,
+    "trade_count": 1159
+  }
+}
