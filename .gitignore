@@ -11,6 +11,7 @@ venv/
 **/*.csv
 !data/README.md
 !data/**/MANIFEST.md
+!data/**/*.csv
 
 results/**/*.png
 results/**/*.pdf
