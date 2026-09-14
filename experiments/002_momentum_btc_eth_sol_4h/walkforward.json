@@ -1,0 +1,76 @@
+{
+  "experiment_id": "002_momentum_btc_eth_sol_4h",
+  "step": "walk-forward",
+  "status": "WFO_COMPLETE",
+  "generated_at_utc": "2026-09-14T21:42:25.273232+00:00",
+  "schema_version": "1.0",
+  "provenance": {
+    "git_commit": "c8eb699a28b380ae82aa11a4bcb23e145aaa775c",
+    "git_dirty": false,
+    "python_version": "3.13.3",
+    "pandas_version": "2.3.3",
+    "numpy_version": "2.2.1",
+    "data_hashes": {
+      "BTC-USD": "0aaaa726e79c238b74688d58982816a4d263bb2339d9793049bd0764e1cc1296",
+      "ETH-USD": "6c52a771499fcc23603ee4dedebafdd04072609b3654d7b03c220648f8d7ed3e",
+      "SOL-USD": "3781a99f3cd4d191f5bdbceb16ab9dbbd0440f97260293c4754fcbfb284eca1b"
+    }
+  },
+  "spec": {
+    "split_index": 2167,
+    "lookback": 6,
+    "tiebreak_order": [
+      "BTC-USD",
+      "ETH-USD",
+      "SOL-USD"
+    ],
+    "warmup_bars": 6,
+    "force_flat_at_split": true
+  },
+  "config": {
+    "initial_capital": 100000.0,
+    "position_pct": 1.0,
+    "commission": 0.0005,
+    "slippage": 0.0002
+  },
+  "is": {
+    "predictive": {
+      "n_obs": 2160,
+      "mean_spread": 0.00015582985692294305,
+      "std_spread": 0.012440642823049991,
+      "median_spread": -0.0004102394407933367,
+      "frac_positive": 0.4828703703703704
+    },
+    "strategy": {
+      "net_pnl": 879.844343164863,
+      "sharpe": 0.3611202531258233,
+      "profit_factor": 1.001773045285538,
+      "win_rate": 0.41335740072202165,
+      "max_drawdown": -0.6746809791591922,
+      "trade_count": 554
+    }
+  },
+  "oos": {
+    "predictive": {
+      "n_obs": 2166,
+      "mean_spread": -0.00011844725283775896,
+      "std_spread": 0.007635903956118808,
+      "median_spread": -0.0002160373576238392,
+      "frac_positive": 0.47968605724838415
+    },
+    "strategy": {
+      "net_pnl": -78548.32194075876,
+      "sharpe": -2.3436089634411914,
+      "profit_factor": 0.6338217095386834,
+      "win_rate": 0.41254125412541254,
+      "max_drawdown": -0.8571279047779066,
+      "trade_count": 606
+    }
+  },
+  "decision": {
+    "predictive_verdict": "FAIL",
+    "strategy_verdict": "FAIL",
+    "overall": "REJECTED",
+    "note": "PROMISING is exploratory, not proof of robustness."
+  }
+}
