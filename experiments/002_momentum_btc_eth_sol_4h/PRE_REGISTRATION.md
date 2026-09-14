@@ -179,7 +179,40 @@ data must be added to the frozen dataset with SHA-256 manifest
 for the same time window as BTC-USD 4H used in Experiment 001.
 
 Data acquisition is a one-time step and must be committed before
+...
 any experiment runner is written.
+
+---
+
+## Sample Construction (Amendment 001 ...
+
+Diagnostic performed 2026-09-14:
+- BTC-USD canonical snapshot (yfinance, Exp 001) has 4,334 rows and
+  5 irregular gaps in 4H spacing (16h, 20h, 24h, 36h, 4d4h).
+- ETH-USD (Binance) and SOL-USD (Binance) each have 4,378 rows with
+  strictly uniform 4H spacing (zero gaps).
+- BTC-only timestamps: 0.
+- Binance-only timestamps: 44.
+
+Analysis universe is defined as:
+
+> The intersection of timestamps present in all three frozen asset
+> series (BTC, ETH, SOL).
+
+No timestamp is added. No timestamp is dropped silently. The 44
+timestamps present in Binance ETH/SOL but absent from BTC are
+excluded by construction. No interpolation, forward-fill, or backfill
+is permitted.
+
+This rule was recorded before any momentum, spread, or portfolio
+computation. It does not modify:
+- the pre-registered lookback (6 bars),
+- the signal definition,
+- the portfolio construction,
+- the costs,
+- the verdict criteria.
+
+The BTC canonical file from Experiment 001 remains untouched.
 
 ---
 
