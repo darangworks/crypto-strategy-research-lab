@@ -1,0 +1,46 @@
+{
+  "experiment_id": "001_rsi_btc_4h",
+  "step": "bootstrap",
+  "status": "BOOTSTRAP_COMPLETE",
+  "generated_at_utc": "2026-09-14T05:51:39.870555+00:00",
+  "schema_version": "1.0",
+  "provenance": {
+    "git_commit": "ea10b9710afa0d462486ab321a3c0aaf0c3acc98",
+    "python_version": "3.13.3",
+    "numpy_version": "2.2.1",
+    "pandas_version": "2.3.3",
+    "data_sha256": "0aaaa726e79c238b74688d58982816a4d263bb2339d9793049bd0764e1cc1296"
+  },
+  "spec": {
+    "statistic": "mean_4h_portfolio_return",
+    "method": "stationary_block_bootstrap",
+    "n_iter": 2000,
+    "ci_level": 0.95,
+    "seed": 20260913,
+    "acf_max_lag": 200,
+    "acf_threshold_factor": 2.0
+  },
+  "inputs": {
+    "n_returns": 4334,
+    "observed_mean": 3.3163452925230165e-06
+  },
+  "block_length_estimation": {
+    "block_length": 1,
+    "acf_first_below": 1,
+    "threshold": 0.030379844191292645,
+    "acf_lag1": 0.00011166263495729413
+  },
+  "distribution": {
+    "mean_of_means": 3.4698170458932717e-06,
+    "std_of_means": 7.636594429866022e-06,
+    "q025": -1.1439796210634152e-05,
+    "q975": 1.826248571170177e-05
+  },
+  "decision": {
+    "criterion": "CI entirely > 0 PASS; includes 0 INCONCLUSIVE; entirely < 0 FAIL",
+    "ci_low": -1.143979621063415e-05,
+    "ci_high": 1.826248571170177e-05,
+    "verdict": "INCONCLUSIVE",
+    "note": "Bootstrap quantifies uncertainty of baseline; cannot rescue WFO FAIL."
+  }
+}
