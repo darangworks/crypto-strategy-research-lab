@@ -1,0 +1,56 @@
+Experiment: 004 — BTC Intraday Session Effects
+Dataset: BTCUSDT Spot 1H
+Period: 2026-08
+
+Source:
+Binance Public Data
+
+Archive:
+BTCUSDT-1h-2026-08.zip
+
+ZIP SHA-256:
+1fa85817e358f73e0dd9509f6f31c79bf9b23d9470971a882c8f814871a3fccf
+
+Extracted CSV:
+BTCUSDT-1h-2026-08.csv
+
+CSV SHA-256:
+20d4c54659b418e928b5283ca8834fec33fcbccd8701d52a7be94566d6483449
+
+Schema:
+Binance Spot Kline — 12 columns
+
+Timestamp:
+Microseconds since Unix epoch
+
+Rows:
+744
+
+Expected rows:
+744
+
+First open time:
+2026-08-01 00:00:00 UTC
+
+Last open time:
+2026-08-31 23:00:00 UTC
+
+Data Integrity:
+PASS
+
+Checks:
+- Row count: PASS
+- 12-column schema: PASS
+- Duplicate timestamps: PASS
+- Chronological order: PASS
+- 1H spacing: PASS
+- OHLC consistency: PASS
+- Non-positive volume: PASS
+
+Research Status:
+FROZEN SNAPSHOT
+
+Note:
+This snapshot is for Experiment 004 data-feasibility and integrity validation.
+No trading strategy, session definition, parameter optimization, or performance conclusion
+has been derived from this dataset.
