@@ -1,0 +1,43 @@
+Experiment 004 — BTCUSDT 1H Canonical Dataset
+
+Symbol: BTCUSDT
+Interval: 1h
+Market: Binance Spot
+Timezone: UTC
+
+Research start: 2024-01-01 00:00:00 UTC
+Research end: 2026-08-31 23:00:00 UTC
+
+Monthly files merged: 32
+Total rows: 23376
+Duplicates: 0
+Global gaps: 0
+Chronology errors: 0
+
+Created at UTC: 2026-09-19T12:33:23.204065+00:00
+
+Canonical file: BTCUSDT_1h_2024-01-01_2026-08-31.csv
+SHA-256: fb8f1537a2f054d49841436ec04eb13e06cdad825d96ad62da77dd9c48ea467e
+
+Source:
+Binance Spot monthly Kline archives
+
+Timestamp convention:
+2024 data: milliseconds
+2025-01 onward: microseconds
+
+Transformation:
+Monthly extracted rows merged chronologically.
+Original Binance row values preserved.
+Canonical CSV adds a descriptive header.
+
+Validation:
+Global duplicate check: PASS
+Global chronology check: PASS
+Exact 1H spacing check: PASS
+Research boundary check: PASS
+OHLC validation: PASS
+Volume validation: PASS
+Trade-count validation: PASS
+
+Status: FROZEN
