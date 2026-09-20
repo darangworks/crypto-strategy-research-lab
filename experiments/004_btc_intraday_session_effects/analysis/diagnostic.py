@@ -64,6 +64,33 @@ SUB_PERIODS = [
 
 
 # ──────────────────────── Helpers ────────────────────────
+def _parse_binance_timestamps(s: pd.Series) -> pd.Series:
+    """Parse mixed Binance timestamp units: milliseconds before 2025, microseconds from 2025."""
+    s = pd.to_numeric(s, errors="raise")
+
+    threshold = 10**14
+    mask_ms = s < threshold
+    mask_us = s >= threshold
+
+    out = pd.Series(pd.NaT, index=s.index, dtype="datetime64[ns, UTC]")
+
+    if mask_ms.any():
+        out.loc[mask_ms] = pd.to_datetime(
+            s.loc[mask_ms],
+            unit="ms",
+            utc=True,
+        )
+
+    if mask_us.any():
+        out.loc[mask_us] = pd.to_datetime(
+            s.loc[mask_us],
+            unit="us",
+            utc=True,
+        )
+
+    return out
+
+
 def _find_col(df: pd.DataFrame, candidates: list[str]) -> str:
     lower = {c.lower(): c for c in df.columns}
     for cand in candidates:
@@ -106,7 +133,7 @@ def load_frozen_dataset() -> pd.DataFrame:
         v_col: "volume",
     })
 
-    df["open_time"] = pd.to_datetime(df["open_time"], utc=True)
+    df["open_time"] = _parse_binance_timestamps(df["open_time"])
     df = df.sort_values("open_time").reset_index(drop=True)
     return df
 
