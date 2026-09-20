@@ -1,0 +1,987 @@
+{
+  "experiment": "P004",
+  "generated_at_utc": "2026-09-20T13:52:16.513748+00:00",
+  "protocol_commit": "a393aad",
+  "protocol_tag": "p004-protocol-locked",
+  "data_sha256": "fb8f1537a2f054d49841436ec04eb13e06cdad825d96ad62da77dd9c48ea467e",
+  "data_rows": 23376,
+  "session_boundaries": {
+    "Asia": {
+      "start_utc": 0,
+      "end_utc": 8,
+      "hours": 8
+    },
+    "London": {
+      "start_utc": 8,
+      "end_utc": 13,
+      "hours": 5
+    },
+    "NewYork": {
+      "start_utc": 13,
+      "end_utc": 21,
+      "hours": 8
+    }
+  },
+  "observations": {
+    "total": 2922,
+    "complete_days": 974
+  },
+  "metrics_summary": {
+    "session_return": {
+      "Asia": {
+        "n": 974,
+        "median": 0.00046199253872076406,
+        "mean": 5.381757458531525e-05,
+        "std": 0.011302654747452073
+      },
+      "London": {
+        "n": 974,
+        "median": 0.00022081659914396278,
+        "mean": 0.00018490457713038388,
+        "std": 0.007988729243093493
+      },
+      "NewYork": {
+        "n": 974,
+        "median": 0.00028005236228125006,
+        "mean": 3.885730058691607e-05,
+        "std": 0.01684000348285
+      }
+    },
+    "abs_return": {
+      "Asia": {
+        "n": 974,
+        "median": 0.005078041923598934,
+        "mean": 0.0076556899144815714,
+        "std": 0.008311623164128893
+      },
+      "London": {
+        "n": 974,
+        "median": 0.0036750704586498394,
+        "mean": 0.005444371487790652,
+        "std": 0.005846569520894664
+      },
+      "NewYork": {
+        "n": 974,
+        "median": 0.007088664815361729,
+        "mean": 0.011247124920923833,
+        "std": 0.012528343933703823
+      }
+    },
+    "session_range": {
+      "Asia": {
+        "n": 974,
+        "median": 1150.8550000000032,
+        "mean": 1421.356478439425,
+        "std": 1017.530791559073
+      },
+      "London": {
+        "n": 974,
+        "median": 877.3600000000006,
+        "mean": 1034.3717967145792,
+        "std": 659.6631069982541
+      },
+      "NewYork": {
+        "n": 974,
+        "median": 1672.9199999999983,
+        "mean": 2000.347320328542,
+        "std": 1361.9527059175448
+      }
+    },
+    "realized_volatility": {
+      "Asia": {
+        "n": 974,
+        "median": 0.0030734214769388103,
+        "mean": 0.003661893727659812,
+        "std": 0.002572618730274431
+      },
+      "London": {
+        "n": 974,
+        "median": 0.0026426225796405,
+        "mean": 0.0032309145121035563,
+        "std": 0.00226475145685207
+      },
+      "NewYork": {
+        "n": 974,
+        "median": 0.004488565595892591,
+        "mean": 0.005171639005839084,
+        "std": 0.0033665147685137276
+      }
+    },
+    "volume": {
+      "Asia": {
+        "n": 974,
+        "median": 5666.6937,
+        "mean": 7139.2983435985625,
+        "std": 6089.267990051764
+      },
+      "London": {
+        "n": 974,
+        "median": 3747.411045,
+        "mean": 4733.531823455853,
+        "std": 3834.1364661664493
+      },
+      "NewYork": {
+        "n": 974,
+        "median": 9249.436010000001,
+        "mean": 11447.162551074949,
+        "std": 8881.029001095536
+      }
+    }
+  },
+  "friedman": {
+    "session_return": {
+      "statistic": 0.3963039014379319,
+      "p_value": 0.8202452068191175,
+      "n_days": 974,
+      "kendall_w": 0.00020344142784288087
+    },
+    "abs_return": {
+      "statistic": 155.38603696098653,
+      "p_value": 1.8128037525228888e-34,
+      "n_days": 974,
+      "kendall_w": 0.07976695942555777
+    },
+    "session_range": {
+      "statistic": 647.8213552361394,
+      "p_value": 2.1251034724121056e-141,
+      "n_days": 974,
+      "kendall_w": 0.3325571638789217
+    },
+    "realized_volatility": {
+      "statistic": 352.14168377823444,
+      "p_value": 3.4151119400758893e-77,
+      "n_days": 974,
+      "kendall_w": 0.18077088489642426
+    },
+    "volume": {
+      "statistic": 1193.841889117044,
+      "p_value": 5.761394925359508e-260,
+      "n_days": 974,
+      "kendall_w": 0.6128551792181951
+    }
+  },
+  "wilcoxon": {
+    "session_return": {
+      "pairs": [],
+      "note": "not_run (omnibus not significant)"
+    },
+    "abs_return": {
+      "pairs": [
+        {
+          "pair": "Asia_vs_London",
+          "n": 974,
+          "n_nonzero": 974,
+          "statistic": 168999.0,
+          "p_value": 6.679770088963795e-15,
+          "rank_biserial": 0.2881630074237877,
+          "p_value_holm": 1.335954017792759e-14
+        },
+        {
+          "pair": "London_vs_NewYork",
+          "n": 974,
+          "n_nonzero": 974,
+          "statistic": 112570.0,
+          "p_value": 7.280180072484529e-46,
+          "rank_biserial": -0.5258463644500605,
+          "p_value_holm": 2.1840540217453587e-45
+        },
+        {
+          "pair": "Asia_vs_NewYork",
+          "n": 974,
+          "n_nonzero": 974,
+          "statistic": 169838.0,
+          "p_value": 1.4164853085986766e-14,
+          "rank_biserial": -0.2846290738693203,
+          "p_value_holm": 1.4164853085986766e-14
+        }
+      ]
+    },
+    "session_range": {
+      "pairs": [
+        {
+          "pair": "Asia_vs_London",
+          "n": 974,
+          "n_nonzero": 974,
+          "statistic": 105411.0,
+          "p_value": 4.5787275223132763e-51,
+          "rank_biserial": 0.5560006318117201,
+          "p_value_holm": 9.157455044626553e-51
+        },
+        {
+          "pair": "London_vs_NewYork",
+          "n": 974,
+          "n_nonzero": 974,
+          "statistic": 36101.5,
+          "p_value": 2.6943265253393645e-116,
+          "rank_biserial": -0.847937661243616,
+          "p_value_holm": 8.082979576018094e-116
+        },
+        {
+          "pair": "Asia_vs_NewYork",
+          "n": 974,
+          "n_nonzero": 974,
+          "statistic": 109906.0,
+          "p_value": 9.123605870822743e-48,
+          "rank_biserial": -0.5370673405991682,
+          "p_value_holm": 9.123605870822743e-48
+        }
+      ]
+    },
+    "realized_volatility": {
+      "pairs": [
+        {
+          "pair": "Asia_vs_London",
+          "n": 974,
+          "n_nonzero": 974,
+          "statistic": 190224.0,
+          "p_value": 7.72395900298173e-08,
+          "rank_biserial": 0.19876164902858948,
+          "p_value_holm": 7.72395900298173e-08
+        },
+        {
+          "pair": "London_vs_NewYork",
+          "n": 974,
+          "n_nonzero": 974,
+          "statistic": 82394.0,
+          "p_value": 9.76849863065321e-70,
+          "rank_biserial": -0.6529500342231348,
+          "p_value_holm": 2.930549589195963e-69
+        },
+        {
+          "pair": "Asia_vs_NewYork",
+          "n": 974,
+          "n_nonzero": 974,
+          "statistic": 100484.0,
+          "p_value": 8.204970202329865e-55,
+          "rank_biserial": -0.5767535407781814,
+          "p_value_holm": 1.640994040465973e-54
+        }
+      ]
+    },
+    "volume": {
+      "pairs": [
+        {
+          "pair": "Asia_vs_London",
+          "n": 974,
+          "n_nonzero": 974,
+          "statistic": 48703.0,
+          "p_value": 1.982693436169792e-102,
+          "rank_biserial": 0.7948591586373928,
+          "p_value_holm": 3.965386872339584e-102
+        },
+        {
+          "pair": "London_vs_NewYork",
+          "n": 974,
+          "n_nonzero": 974,
+          "statistic": 6301.0,
+          "p_value": 1.2193382118317717e-152,
+          "rank_biserial": -0.9734596956773548,
+          "p_value_holm": 3.658014635495315e-152
+        },
+        {
+          "pair": "Asia_vs_NewYork",
+          "n": 974,
+          "n_nonzero": 974,
+          "statistic": 60557.0,
+          "p_value": 3.3649858512733134e-90,
+          "rank_biserial": -0.7449291844363713,
+          "p_value_holm": 3.3649858512733134e-90
+        }
+      ]
+    }
+  },
+  "bootstrap": {
+    "session_return": {
+      "n_days": 974,
+      "session_medians": {
+        "Asia": {
+          "observed_median": 0.00046199253872076406,
+          "ci_low": -6.862084585880485e-05,
+          "ci_high": 0.001046057020174853
+        },
+        "London": {
+          "observed_median": 0.00022081659914396278,
+          "ci_low": -0.00018323850117468146,
+          "ci_high": 0.000669014544068103
+        },
+        "NewYork": {
+          "observed_median": 0.00028005236228125006,
+          "ci_low": -0.000164976341784503,
+          "ci_high": 0.001086179429651251
+        }
+      },
+      "friedman_chi_square_bootstrap": {
+        "observed": 0.3963039014379319,
+        "bootstrap_quantile_2_5": 0.05749486653076019,
+        "bootstrap_quantile_97_5": 8.829722792608752,
+        "n_valid_iterations": 10000,
+        "note": "Distribution of Friedman chi-square under UTC-day block resampling. Not a confidence interval for a population parameter."
+      }
+    },
+    "abs_return": {
+      "n_days": 974,
+      "session_medians": {
+        "Asia": {
+          "observed_median": 0.005078041923598934,
+          "ci_low": 0.004562224529610642,
+          "ci_high": 0.005594574009565743
+        },
+        "London": {
+          "observed_median": 0.0036750704586498394,
+          "ci_low": 0.003354464727228752,
+          "ci_high": 0.003932092411246366
+        },
+        "NewYork": {
+          "observed_median": 0.007088664815361729,
+          "ci_low": 0.006513513983885011,
+          "ci_high": 0.008021872177251652
+        }
+      },
+      "friedman_chi_square_bootstrap": {
+        "observed": 155.38603696098653,
+        "bootstrap_quantile_2_5": 113.43295687885082,
+        "bootstrap_quantile_97_5": 205.87885010266953,
+        "n_valid_iterations": 10000,
+        "note": "Distribution of Friedman chi-square under UTC-day block resampling. Not a confidence interval for a population parameter."
+      }
+    },
+    "session_range": {
+      "n_days": 974,
+      "session_medians": {
+        "Asia": {
+          "observed_median": 1150.8550000000032,
+          "ci_low": 1102.5299999999988,
+          "ci_high": 1187.1349999999984
+        },
+        "London": {
+          "observed_median": 877.3600000000006,
+          "ci_low": 827.1299999999974,
+          "ci_high": 916.6949999999924
+        },
+        "NewYork": {
+          "observed_median": 1672.9199999999983,
+          "ci_low": 1584.3099999999977,
+          "ci_high": 1772.2100000000064
+        }
+      },
+      "friedman_chi_square_bootstrap": {
+        "observed": 647.8213552361394,
+        "bootstrap_quantile_2_5": 576.0,
+        "bootstrap_quantile_97_5": 724.8214065708431,
+        "n_valid_iterations": 10000,
+        "note": "Distribution of Friedman chi-square under UTC-day block resampling. Not a confidence interval for a population parameter."
+      }
+    },
+    "realized_volatility": {
+      "n_days": 974,
+      "session_medians": {
+        "Asia": {
+          "observed_median": 0.0030734214769388103,
+          "ci_low": 0.0029443807060235043,
+          "ci_high": 0.0032175244260663257
+        },
+        "London": {
+          "observed_median": 0.0026426225796405,
+          "ci_low": 0.0025178286949487094,
+          "ci_high": 0.0027935059584912676
+        },
+        "NewYork": {
+          "observed_median": 0.004488565595892591,
+          "ci_low": 0.004253528665016671,
+          "ci_high": 0.004732428917423363
+        }
+      },
+      "friedman_chi_square_bootstrap": {
+        "observed": 352.14168377823444,
+        "bootstrap_quantile_2_5": 291.89861396303945,
+        "bootstrap_quantile_97_5": 419.32854209445577,
+        "n_valid_iterations": 10000,
+        "note": "Distribution of Friedman chi-square under UTC-day block resampling. Not a confidence interval for a population parameter."
+      }
+    },
+    "volume": {
+      "n_days": 974,
+      "session_medians": {
+        "Asia": {
+          "observed_median": 5666.6937,
+          "ci_low": 5390.341469999999,
+          "ci_high": 5924.22685
+        },
+        "London": {
+          "observed_median": 3747.411045,
+          "ci_low": 3564.15081,
+          "ci_high": 3911.55235
+        },
+        "NewYork": {
+          "observed_median": 9249.436010000001,
+          "ci_low": 8735.07483,
+          "ci_high": 9680.26484
+        }
+      },
+      "friedman_chi_square_bootstrap": {
+        "observed": 1193.841889117044,
+        "bootstrap_quantile_2_5": 1122.4866529774135,
+        "bootstrap_quantile_97_5": 1264.2156057494867,
+        "n_valid_iterations": 10000,
+        "note": "Distribution of Friedman chi-square under UTC-day block resampling. Not a confidence interval for a population parameter."
+      }
+    }
+  },
+  "sub_period_stability": {
+    "session_return": {
+      "2024": {
+        "friedman": {
+          "statistic": 0.6065573770492847,
+          "p_value": 0.738393285957845,
+          "n_days": 366,
+          "kendall_w": 0.0008286302965154163
+        },
+        "wilcoxon_pairs": [],
+        "wilcoxon_note": "not_run (omnibus not significant)"
+      },
+      "2025": {
+        "friedman": {
+          "statistic": 1.073972602739559,
+          "p_value": 0.584507129014762,
+          "n_days": 365,
+          "kendall_w": 0.001471195346218574
+        },
+        "wilcoxon_pairs": [],
+        "wilcoxon_note": "not_run (omnibus not significant)"
+      },
+      "2026_Jan_Aug": {
+        "friedman": {
+          "statistic": 4.08230452674934,
+          "p_value": 0.12987896984434752,
+          "n_days": 243,
+          "kendall_w": 0.00839980355298218
+        },
+        "wilcoxon_pairs": [],
+        "wilcoxon_note": "not_run (omnibus not significant)"
+      }
+    },
+    "abs_return": {
+      "2024": {
+        "friedman": {
+          "statistic": 80.03825136611977,
+          "p_value": 4.1678736547546516e-18,
+          "n_days": 366,
+          "kendall_w": 0.10934187345098328
+        },
+        "wilcoxon_pairs": [
+          {
+            "pair": "Asia_vs_London",
+            "n": 366,
+            "n_nonzero": 366,
+            "statistic": 23880.0,
+            "p_value": 1.673444612171538e-06,
+            "rank_biserial": 0.28887300665564836,
+            "p_value_holm": 1.673444612171538e-06
+          },
+          {
+            "pair": "London_vs_NewYork",
+            "n": 366,
+            "n_nonzero": 366,
+            "statistic": 13883.0,
+            "p_value": 2.35824550263333e-22,
+            "rank_biserial": -0.5865755423534492,
+            "p_value_holm": 7.074736507899989e-22
+          },
+          {
+            "pair": "Asia_vs_NewYork",
+            "n": 366,
+            "n_nonzero": 366,
+            "statistic": 20869.0,
+            "p_value": 3.4759025755530167e-10,
+            "rank_biserial": -0.3785381396941677,
+            "p_value_holm": 6.951805151106033e-10
+          }
+        ],
+        "wilcoxon_note": "run (Friedman significant)"
+      },
+      "2025": {
+        "friedman": {
+          "statistic": 58.26301369862995,
+          "p_value": 2.2302180469818766e-13,
+          "n_days": 365,
+          "kendall_w": 0.07981234753236979
+        },
+        "wilcoxon_pairs": [
+          {
+            "pair": "Asia_vs_London",
+            "n": 365,
+            "n_nonzero": 365,
+            "statistic": 22160.0,
+            "p_value": 2.53346544612263e-08,
+            "rank_biserial": 0.33647728123362525,
+            "p_value_holm": 5.06693089224526e-08
+          },
+          {
+            "pair": "London_vs_NewYork",
+            "n": 365,
+            "n_nonzero": 365,
+            "statistic": 15637.0,
+            "p_value": 1.3118922768690817e-18,
+            "rank_biserial": -0.5317913017441426,
+            "p_value_holm": 3.935676830607245e-18
+          },
+          {
+            "pair": "Asia_vs_NewYork",
+            "n": 365,
+            "n_nonzero": 365,
+            "statistic": 26317.0,
+            "p_value": 0.0004478783569960757,
+            "rank_biserial": -0.21200688674301968,
+            "p_value_holm": 0.0004478783569960757
+          }
+        ],
+        "wilcoxon_note": "run (Friedman significant)"
+      },
+      "2026_Jan_Aug": {
+        "friedman": {
+          "statistic": 23.119341563786293,
+          "p_value": 9.543304184499319e-06,
+          "n_days": 243,
+          "kendall_w": 0.04757066165388126
+        },
+        "wilcoxon_pairs": [
+          {
+            "pair": "Asia_vs_London",
+            "n": 243,
+            "n_nonzero": 243,
+            "statistic": 11760.0,
+            "p_value": 0.005230568460757876,
+            "rank_biserial": 0.20663833232139242,
+            "p_value_holm": 0.005230568460757876
+          },
+          {
+            "pair": "London_vs_NewYork",
+            "n": 243,
+            "n_nonzero": 243,
+            "statistic": 8579.0,
+            "p_value": 1.2516428506992272e-08,
+            "rank_biserial": -0.4212372664103083,
+            "p_value_holm": 3.7549285520976815e-08
+          },
+          {
+            "pair": "Asia_vs_NewYork",
+            "n": 243,
+            "n_nonzero": 243,
+            "statistic": 11397.0,
+            "p_value": 0.0017876218351883576,
+            "rank_biserial": -0.23112730216555352,
+            "p_value_holm": 0.003575243670376715
+          }
+        ],
+        "wilcoxon_note": "run (Friedman significant)"
+      }
+    },
+    "session_range": {
+      "2024": {
+        "friedman": {
+          "statistic": 253.77595628415293,
+          "p_value": 7.820801677366754e-56,
+          "n_days": 366,
+          "kendall_w": 0.34668846486906135
+        },
+        "wilcoxon_pairs": [
+          {
+            "pair": "Asia_vs_London",
+            "n": 366,
+            "n_nonzero": 366,
+            "statistic": 15778.0,
+            "p_value": 1.5031142889329183e-18,
+            "rank_biserial": 0.5301439823707211,
+            "p_value_holm": 1.5031142889329183e-18
+          },
+          {
+            "pair": "London_vs_NewYork",
+            "n": 366,
+            "n_nonzero": 366,
+            "statistic": 4566.0,
+            "p_value": 1.526904685414555e-46,
+            "rank_biserial": -0.864028230669585,
+            "p_value_holm": 4.580714056243665e-46
+          },
+          {
+            "pair": "Asia_vs_NewYork",
+            "n": 366,
+            "n_nonzero": 366,
+            "statistic": 13287.0,
+            "p_value": 1.2539855337147968e-23,
+            "rank_biserial": -0.6043239379997319,
+            "p_value_holm": 2.5079710674295937e-23
+          }
+        ],
+        "wilcoxon_note": "run (Friedman significant)"
+      },
+      "2025": {
+        "friedman": {
+          "statistic": 257.46301369862977,
+          "p_value": 1.237704381203154e-56,
+          "n_days": 365,
+          "kendall_w": 0.3526890598611367
+        },
+        "wilcoxon_pairs": [
+          {
+            "pair": "Asia_vs_London",
+            "n": 365,
+            "n_nonzero": 365,
+            "statistic": 12912.0,
+            "p_value": 3.1280924979761185e-24,
+            "rank_biserial": 0.6133842353469571,
+            "p_value_holm": 6.256184995952237e-24
+          },
+          {
+            "pair": "London_vs_NewYork",
+            "n": 365,
+            "n_nonzero": 365,
+            "statistic": 4409.0,
+            "p_value": 7.873526926241883e-47,
+            "rank_biserial": -0.8679841305486937,
+            "p_value_holm": 2.362058077872565e-46
+          },
+          {
+            "pair": "Asia_vs_NewYork",
+            "n": 365,
+            "n_nonzero": 365,
+            "statistic": 16461.0,
+            "p_value": 4.6109547470758535e-17,
+            "rank_biserial": -0.5071187963170896,
+            "p_value_holm": 4.6109547470758535e-17
+          }
+        ],
+        "wilcoxon_note": "run (Friedman significant)"
+      },
+      "2026_Jan_Aug": {
+        "friedman": {
+          "statistic": 139.31687242798398,
+          "p_value": 5.594039572340228e-31,
+          "n_days": 243,
+          "kendall_w": 0.2866602313333004
+        },
+        "wilcoxon_pairs": [
+          {
+            "pair": "Asia_vs_London",
+            "n": 243,
+            "n_nonzero": 243,
+            "statistic": 7422.0,
+            "p_value": 1.5056564026989363e-11,
+            "rank_biserial": 0.4992916413681441,
+            "p_value_holm": 3.011312805397873e-11
+          },
+          {
+            "pair": "London_vs_NewYork",
+            "n": 243,
+            "n_nonzero": 243,
+            "statistic": 3186.0,
+            "p_value": 2.699462964031299e-26,
+            "rank_biserial": -0.785063752276867,
+            "p_value_holm": 8.098388892093897e-26
+          },
+          {
+            "pair": "Asia_vs_NewYork",
+            "n": 243,
+            "n_nonzero": 243,
+            "statistic": 7547.0,
+            "p_value": 3.280550281817048e-11,
+            "rank_biserial": -0.49085880051271674,
+            "p_value_holm": 3.280550281817048e-11
+          }
+        ],
+        "wilcoxon_note": "run (Friedman significant)"
+      }
+    },
+    "realized_volatility": {
+      "2024": {
+        "friedman": {
+          "statistic": 147.95081967213082,
+          "p_value": 7.462557864593991e-33,
+          "n_days": 366,
+          "kendall_w": 0.20211860610946833
+        },
+        "wilcoxon_pairs": [
+          {
+            "pair": "Asia_vs_London",
+            "n": 366,
+            "n_nonzero": 366,
+            "statistic": 26352.0,
+            "p_value": 0.0003585521961901267,
+            "rank_biserial": 0.21525885558583105,
+            "p_value_holm": 0.0003585521961901267
+          },
+          {
+            "pair": "London_vs_NewYork",
+            "n": 366,
+            "n_nonzero": 366,
+            "statistic": 10409.0,
+            "p_value": 2.632307215508e-30,
+            "rank_biserial": -0.6900284391238963,
+            "p_value_holm": 7.896921646524e-30
+          },
+          {
+            "pair": "Asia_vs_NewYork",
+            "n": 366,
+            "n_nonzero": 366,
+            "statistic": 12828.0,
+            "p_value": 1.2345926298804176e-24,
+            "rank_biserial": -0.6179925849823559,
+            "p_value_holm": 2.469185259760835e-24
+          }
+        ],
+        "wilcoxon_note": "run (Friedman significant)"
+      },
+      "2025": {
+        "friedman": {
+          "statistic": 162.58082191780795,
+          "p_value": 4.966187230646831e-36,
+          "n_days": 365,
+          "kendall_w": 0.2227134546819287
+        },
+        "wilcoxon_pairs": [
+          {
+            "pair": "Asia_vs_London",
+            "n": 365,
+            "n_nonzero": 365,
+            "statistic": 25369.0,
+            "p_value": 6.888526125245191e-05,
+            "rank_biserial": 0.2403922449285126,
+            "p_value_holm": 6.888526125245191e-05
+          },
+          {
+            "pair": "London_vs_NewYork",
+            "n": 365,
+            "n_nonzero": 365,
+            "statistic": 9834.0,
+            "p_value": 1.5841669196408857e-31,
+            "rank_biserial": -0.7055468223669437,
+            "p_value_holm": 4.752500758922657e-31
+          },
+          {
+            "pair": "Asia_vs_NewYork",
+            "n": 365,
+            "n_nonzero": 365,
+            "statistic": 12323.0,
+            "p_value": 1.502533394244071e-25,
+            "rank_biserial": -0.6310202859495472,
+            "p_value_holm": 3.005066788488142e-25
+          }
+        ],
+        "wilcoxon_note": "run (Friedman significant)"
+      },
+      "2026_Jan_Aug": {
+        "friedman": {
+          "statistic": 49.637860082305,
+          "p_value": 1.664468713934346e-11,
+          "n_days": 243,
+          "kendall_w": 0.10213551457264403
+        },
+        "wilcoxon_pairs": [
+          {
+            "pair": "Asia_vs_London",
+            "n": 243,
+            "n_nonzero": 243,
+            "statistic": 13174.0,
+            "p_value": 0.13274556181822963,
+            "rank_biserial": 0.11124603656479795,
+            "p_value_holm": 0.13274556181822963
+          },
+          {
+            "pair": "London_vs_NewYork",
+            "n": 243,
+            "n_nonzero": 243,
+            "statistic": 7330.0,
+            "p_value": 8.419040976297874e-12,
+            "rank_biserial": -0.5054982122377386,
+            "p_value_holm": 2.525712292889362e-11
+          },
+          {
+            "pair": "Asia_vs_NewYork",
+            "n": 243,
+            "n_nonzero": 243,
+            "statistic": 8466.0,
+            "p_value": 6.809414383270004e-09,
+            "rank_biserial": -0.42886055454361466,
+            "p_value_holm": 1.3618828766540008e-08
+          }
+        ],
+        "wilcoxon_note": "run (Friedman significant)"
+      }
+    },
+    "volume": {
+      "2024": {
+        "friedman": {
+          "statistic": 495.1038251366117,
+          "p_value": 3.0872399603882828e-108,
+          "n_days": 366,
+          "kendall_w": 0.6763713458150433
+        },
+        "wilcoxon_pairs": [
+          {
+            "pair": "Asia_vs_London",
+            "n": 366,
+            "n_nonzero": 366,
+            "statistic": 7819.0,
+            "p_value": 4.640634680772987e-37,
+            "rank_biserial": 0.767156534298179,
+            "p_value_holm": 4.640634680772987e-37
+          },
+          {
+            "pair": "London_vs_NewYork",
+            "n": 366,
+            "n_nonzero": 366,
+            "statistic": 362.0,
+            "p_value": 1.893185822279263e-60,
+            "rank_biserial": -0.989219934187996,
+            "p_value_holm": 5.679557466837789e-60
+          },
+          {
+            "pair": "Asia_vs_NewYork",
+            "n": 366,
+            "n_nonzero": 366,
+            "statistic": 5640.0,
+            "p_value": 2.7405339003644e-43,
+            "rank_biserial": -0.8320453834814848,
+            "p_value_holm": 5.4810678007288e-43
+          }
+        ],
+        "wilcoxon_note": "run (Friedman significant)"
+      },
+      "2025": {
+        "friedman": {
+          "statistic": 447.8191780821917,
+          "p_value": 5.718748983657707e-98,
+          "n_days": 365,
+          "kendall_w": 0.6134509288797146
+        },
+        "wilcoxon_pairs": [
+          {
+            "pair": "Asia_vs_London",
+            "n": 365,
+            "n_nonzero": 365,
+            "statistic": 6336.0,
+            "p_value": 4.896001599351399e-41,
+            "rank_biserial": 0.8102852009880979,
+            "p_value_holm": 9.792003198702799e-41
+          },
+          {
+            "pair": "London_vs_NewYork",
+            "n": 365,
+            "n_nonzero": 365,
+            "statistic": 881.0,
+            "p_value": 1.8475202714209655e-58,
+            "rank_biserial": -0.9736207799985028,
+            "p_value_holm": 5.542560814262896e-58
+          },
+          {
+            "pair": "Asia_vs_NewYork",
+            "n": 365,
+            "n_nonzero": 365,
+            "statistic": 9428.0,
+            "p_value": 1.4540655498609943e-32,
+            "rank_biserial": -0.7177034209147392,
+            "p_value_holm": 1.4540655498609943e-32
+          }
+        ],
+        "wilcoxon_note": "run (Friedman significant)"
+      },
+      "2026_Jan_Aug": {
+        "friedman": {
+          "statistic": 256.2304526748976,
+          "p_value": 2.292261466481809e-56,
+          "n_days": 243,
+          "kendall_w": 0.5272231536520526
+        },
+        "wilcoxon_pairs": [
+          {
+            "pair": "Asia_vs_London",
+            "n": 243,
+            "n_nonzero": 243,
+            "statistic": 2809.0,
+            "p_value": 6.4325096178901035e-28,
+            "rank_biserial": 0.810497200296836,
+            "p_value_holm": 1.2865019235780207e-27
+          },
+          {
+            "pair": "London_vs_NewYork",
+            "n": 243,
+            "n_nonzero": 243,
+            "statistic": 981.0,
+            "p_value": 1.6487763912500823e-36,
+            "rank_biserial": -0.9338190649666059,
+            "p_value_holm": 4.9463291737502466e-36
+          },
+          {
+            "pair": "Asia_vs_NewYork",
+            "n": 243,
+            "n_nonzero": 243,
+            "statistic": 5684.0,
+            "p_value": 7.95845562833765e-17,
+            "rank_biserial": -0.6165418606220063,
+            "p_value_holm": 7.95845562833765e-17
+          }
+        ],
+        "wilcoxon_note": "run (Friedman significant)"
+      }
+    }
+  },
+  "interpretation": {
+    "label": "STRUCTURE DETECTED",
+    "significant_metrics": [
+      "abs_return",
+      "session_range",
+      "realized_volatility",
+      "volume"
+    ],
+    "significant_pairs_after_holm": [
+      {
+        "metric": "abs_return",
+        "pair": "Asia_vs_London"
+      },
+      {
+        "metric": "abs_return",
+        "pair": "London_vs_NewYork"
+      },
+      {
+        "metric": "abs_return",
+        "pair": "Asia_vs_NewYork"
+      },
+      {
+        "metric": "session_range",
+        "pair": "Asia_vs_London"
+      },
+      {
+        "metric": "session_range",
+        "pair": "London_vs_NewYork"
+      },
+      {
+        "metric": "session_range",
+        "pair": "Asia_vs_NewYork"
+      },
+      {
+        "metric": "realized_volatility",
+        "pair": "Asia_vs_London"
+      },
+      {
+        "metric": "realized_volatility",
+        "pair": "London_vs_NewYork"
+      },
+      {
+        "metric": "realized_volatility",
+        "pair": "Asia_vs_NewYork"
+      },
+      {
+        "metric": "volume",
+        "pair": "Asia_vs_London"
+      },
+      {
+        "metric": "volume",
+        "pair": "London_vs_NewYork"
+      },
+      {
+        "metric": "volume",
+        "pair": "Asia_vs_NewYork"
+      }
+    ]
+  }
+}
